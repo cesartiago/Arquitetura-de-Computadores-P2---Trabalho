@@ -9,9 +9,8 @@ Muitas coisas nele está/se escreve em hexadecimal. Se você escreve 1h, quer di
 
 Entendendo como o GNU Sim 8085:
 - Todos os valores que são operados/usados/mexidos no programa passam pelo registrador A. (localize os registradores no canto superior esquerdo)
-- Assim, se você usar um "código" INCREMENTE (INR) ou DECREMENTE (DCR), por mais que o simulador NÃO MOSTRE, os valores dessa conta está passando por ele, pelo
-reg A. ou seja: se faço INR E, o reg. e (você vai achar o reg. e, pois fica escrito DE no canto superior esquerdo, o reg. "E" é o segundo "00", e não o primeiro, que é o registrador D) é incrementado
-em 1.
+- INCREMENTE (INR) ou DECREMENTE (DCR)
+- Reg. e, fica escrito DE no canto superior esquerdo, o reg. "E" é o segundo "00", e não o primeiro, que é o registrador D)
 
 
 Sobre loops:
