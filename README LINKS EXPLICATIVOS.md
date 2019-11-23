@@ -30,6 +30,9 @@ https://www.oshonsoft.com/8085gettingstarted.html
 
 OBS: "C" no jump é a flag, não o registrador C.
 
+XZ- Flag Z = SINALIZADOR Z:
+https://en.wikipedia.org/wiki/Zero_flag
+
 Loop em Espanhol, Laços = Bucles:
 ZZ- https://www.youtube.com/watch?v=netF8BzZotQ&list=PLsYJh9REo8PnvnO18efSwLDjdjUafQIW7&index=2&t=0s
 
