@@ -1,0 +1,27 @@
+
+;<Program title>
+
+jmp start
+
+;data
+
+
+;code
+start: nop
+;"Função" Soma:
+LDA 1 ;Carrega o dado que está em decimal no endereco de MEMÓRIA 1 (decimal), para o registrador a (lá ele guarda em hexadec)
+mov b,A ;Move o valor de a para o registrador b
+
+LDA 2 ;Carrega o dado que está em decimal no endereco de MEMÓRIA 2 (decimal), para o registrador a (lá ele guarda em hexadec)
+mov c,A ;Move o valor de a para o registrador c
+; AGORA EM A ESTÁ O VALOR DE C, A = C
+mov e, A ;Pois "e" é a auxiliar, que indica quantas vezes nós iremos repetir a soma
+; AGORA O VALOR DE C está em "e"
+
+add b ; Reg. A = A + B ,ou seja, Adiciona ao reg. A (que já contém o último valor de c) o b.
+
+mov d, A ; Guarda em D o valor de A = A + B 
+sta 004 ; "Store accumulator" Guardar no endereço de memória "0004" o valor de "Acumulator", ou seja, o reg. A
+DCR e; Tira -1 de "e" - reg. auxiliar
+
+hlt
