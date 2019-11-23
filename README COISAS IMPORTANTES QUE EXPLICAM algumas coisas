@@ -19,19 +19,6 @@ E vai mostrar A=0. Só que na verdade, A= E, e como e = 1, A na verdade é = 1. 
 
 Sobre loops:
 ...pois... :O loop funciona com os "jumps" que é saltar para alguma linha. Quando você escreve um JUMP, como "JNZ" você precisa de escreve para onde você quer que pule, como:
-jnz InicioDoLoopM
-e em alguma linha, antes do código que está nela você terá que "declara" o InicioDoLoopM: (ponha dois pontos que "declara")
-O JNZ é um loop que pula quando A FLAG "Z" = 0. Z será 0 se o registrador A é diferente de 0
-AÍ ESTÁ O "PROBLEMA", e o motivo do "...pois...". O Reg. A vai aparecer 0 as vezes na simulação, mais ele não é 0, e sim o valor resultado da última operação. Isso pode 
-confundir você. Pois na execução por partes (para testar) A estará = 0, mais não é 0, é o valor que está no último valor registrado. Assim, você pode não entender porquê um loop
-está acabando ou começando, se A = 0. Mas lembre-se, incremento e decremento mudam o valor de A, só que o programa não mostra.
-
-Sobre loops:
-...pois... :O loop funciona com os "jumps" que é saltar para alguma linha. Quando você escreve um JUMP, como "JNZ" você precisa de escreve para onde você quer que pule, como:
 jnz InicioDoLoopM (pula para linha onde está escrito "InicioDoLoopM:")
 e em alguma linha, antes do código que você escreveu você terá que "declarar" o InicioDoLoopM: (<- escrevendo isto e colocando dois pontos que "declara")
-O JNZ é um loop que pula quando A FLAG "Z" = 0. Z será 0 se o registrador A é diferente de 0
-AÍ ESTÁ O "PROBLEMA
-", e o motivo do "...pois...". O Reg. A vai aparecer 0 as vezes na simulação, mais ele não é 0, e sim o valor resultado da última operação. Isso pode 
-confundir você. Pois na execução por partes (para testar) A estará = 0, mais não é 0, é o valor que está no último valor registrado. Assim, você pode não entender porquê um loop
-está acabando ou começando, se A = 0. Mas lembre-se, incremento e decremento mudam o valor de A, só que o programa não mostra.
+O JNZ é um loop que pula quando a FLAG "Z" = 0. Z, o sinalizador zero é usado para verificar o resultado de uma operação aritmética, incluindo instruções lógicas bit a bit . É definido como 1, ou verdadeiro, se um resultado aritmético for zero e redefinido caso contrário. Isso inclui resultados que não são armazenados, pois a maioria dos conjuntos de instruções tradicionais implementa a instrução de comparação como uma subtração onde o resultado é descartado. Também é comum que os processadores tenham uma instrução AND bit a bit que não armazene o resultado.
