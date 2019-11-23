@@ -1,0 +1,22 @@
+
+;<Program title>
+
+jmp start
+
+;data
+
+
+;code
+start: nop
+
+
+	mvi b,7h
+	mvi a,0h
+
+
+	
+InicioDoLoop:	inr a
+		dcr b
+		jnz InicioDoLoop
+
+hlt
