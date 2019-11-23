@@ -1,0 +1,30 @@
+
+;<Program title>	;---INICIAL
+
+jmp start		;---INICIAL
+
+;data			;---INICIAL
+
+
+;code			;---INICIAL
+start: nop		;---INICIAL
+
+loop:
+
+jnz loop
+LDA 6
+lxi  h, 1 ;Carrega 1 no par HL, para endereçamento de memória
+sta 4 ;o conteúdo do acumulador é copiado para o local da memória
+LDA 1 ;Carrega o dado que está em decimal no endereco de MEMÓRIA 11 (dec), para o registrador a (lá ele guarda em hexadec)
+mov b,a ;Move o valor de a para o registrador b
+LDA 2
+mov C,a 
+
+mvi a,12h ;(11 na base hexadecimal) ;Move imediatamente o 11 (na base hexadecimal) para o registrador a	
+mov b,a ;Move o valor de a para o registrador b
+
+add c
+
+out 01
+
+hlt			;---INICIAL
