@@ -1,0 +1,37 @@
+# Arquitetura-de-Computadores-P2---Trabalho
+ - Trabalho Simulando no GNU Sim8085 - Arquitetura de Computadores P2
+ 
+COISAS IMPORTANTES QUE EXPLICAM algumas coisas:
+
+É bom que no programa, AO INVÉS de comp. e executar direto, aperte F5 para executar em partes e testar.
+
+Muitas coisas nele está/se escreve em hexadecimal. Se você escreve 1h, quer dizer o número 1 em hexadecimal e não em binário ou decimal. (Nesse caso do número 1, em todos esses sistemas numéricos, o valor será 1 mesmo)
+
+Entendendo como o GNU Sim 8085:
+- Todos os valores que são operados/usados/mexidos no programa passam pelo registrador A. (localize os registradores no canto superior esquerdo)
+- Assim, se você usar um "código" INCREMENTE (INR) ou DECREMENTE (DCR), por mais que o simulador NÃO MOSTRE, os valores dessa conta está passando por ele, pelo
+reg A. ou seja: se faço INR E, o reg. e (você vai achar o reg. e, pois fica escrito DE no canto superior esquerdo, o reg. "E" é o segundo "00", e não o primeiro, que é o registrador D) é incrementado
+em 1.
+O simulador vai mostrar e = 1 (tanto faz escrever "e" maiúsculo ou minúsculo).
+E vai mostrar A=0. Só que na verdade, A= E, e como e = 1, A na verdade é = 1. Só que não mostra. Isso vai servir para o loop pois...:
+
+
+
+Sobre loops:
+...pois... :O loop funciona com os "jumps" que é saltar para alguma linha. Quando você escreve um JUMP, como "JNZ" você precisa de escreve para onde você quer que pule, como:
+jnz InicioDoLoopM
+e em alguma linha, antes do código que está nela você terá que "declara" o InicioDoLoopM: (ponha dois pontos que "declara")
+O JNZ é um loop que pula quando A FLAG "Z" = 0. Z será 0 se o registrador A é diferente de 0
+AÍ ESTÁ O "PROBLEMA", e o motivo do "...pois...". O Reg. A vai aparecer 0 as vezes na simulação, mais ele não é 0, e sim o valor resultado da última operação. Isso pode 
+confundir você. Pois na execução por partes (para testar) A estará = 0, mais não é 0, é o valor que está no último valor registrado. Assim, você pode não entender porquê um loop
+está acabando ou começando, se A = 0. Mas lembre-se, incremento e decremento mudam o valor de A, só que o programa não mostra.
+
+Sobre loops:
+...pois... :O loop funciona com os "jumps" que é saltar para alguma linha. Quando você escreve um JUMP, como "JNZ" você precisa de escreve para onde você quer que pule, como:
+jnz InicioDoLoopM (pula para linha onde está escrito "InicioDoLoopM:")
+e em alguma linha, antes do código que você escreveu você terá que "declarar" o InicioDoLoopM: (<- escrevendo isto e colocando dois pontos que "declara")
+O JNZ é um loop que pula quando A FLAG "Z" = 0. Z será 0 se o registrador A é diferente de 0
+AÍ ESTÁ O "PROBLEMA
+", e o motivo do "...pois...". O Reg. A vai aparecer 0 as vezes na simulação, mais ele não é 0, e sim o valor resultado da última operação. Isso pode 
+confundir você. Pois na execução por partes (para testar) A estará = 0, mais não é 0, é o valor que está no último valor registrado. Assim, você pode não entender porquê um loop
+está acabando ou começando, se A = 0. Mas lembre-se, incremento e decremento mudam o valor de A, só que o programa não mostra.
