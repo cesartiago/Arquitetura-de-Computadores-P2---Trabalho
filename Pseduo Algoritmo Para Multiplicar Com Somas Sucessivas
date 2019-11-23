@@ -1,0 +1,77 @@
+Carregue o dado do endereço de memória 1 em reg. A
+Mova o dado para reg. b
+
+Carregue o endereço de memória 2 em reg. A
+Mova o dado para reg. c
+--- Reg. A está com o valor de reg. C, portanto, aqui, A = C e C = A
+Mova o dado para reg. e
+
+FAÇA A SOMA, o total resultando em A. (A= B + C):
+"add b", pois A = C já, e add b, é adicionar b em a, PORTANTO A = B+C
+
+Guarde essa soma no reg. D
+ADICIONE O REG. D NO O ENDEREÇO DE MEMÓRIA 3
+Tire um do Auxiliar reg e.
+Faça a soma de novo...
+
+---- O e tem que ser decrementado antes do loop começar: e = e-1 aqui, pois se não nós faremos o loop "e" vezes, só que nosso loop é no estilo "do while".
+Ele já vai ter feito um conta, e vai precisar de repiti-lá e-1 vzes.
+
+O loop só acaba quando e = 0
+
+_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_= NA VOLTA DO LOOP PARA O COMEÇO: _=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=_=
+
+
+A única coisa que não pode voltar ao normal é o "e", que terá que ser e= (e -1) -1
+OU INCREMENTA +1 EM ALGUM REG
+E QUANDO REGB = REG A, ACABA
+
+Explicação do loop:
+https://www.oshonsoft.com/8085gettingstarted.html
+
+No loop você deve declarar a linha l1: OU a linha loop:
+que ele vai voltar, atravéz do "jump" l1 ou saltar par aloop:
+
+"C" no jump é a flag, CARRY 
+FALSO = (CARRY VAI PARA 1 SE REG A = 0 SE NÃO ME ENGANO)
+
+
+"Z" no jump é a flag, CARRY 
+VERDADEIRO(Z VAI PARA 1 SE REG C = 0 SE NÃO ME ENGANO)
+-----
+
+De um vídeo do youtube:
+
+MVI B,20H
+MVI C,20H
+MVI A,00H
+MVI D,00H
+
+ADD C
+JNC L1
+INR D
+L1: DCR B
+JNZ LOOP
+STA 1
+MOV A,D
+STA 2
+
+De outro vídeo:
+
+	mvi c,7h
+	mvi a,0h
+
+InicioDoLoop:
+	
+		inr a
+		dcr c
+		jnz InicioDoLoop:
+
+=======
+
+Eu diria para guardar o operando 1 e o multiplicador
+fazer a soma de A+A
+e retirar um do multiplicador
+vai ao loop: fazer a soma de novo
+e retirar um do multiplicador
+isso até o multiplicador zerar
