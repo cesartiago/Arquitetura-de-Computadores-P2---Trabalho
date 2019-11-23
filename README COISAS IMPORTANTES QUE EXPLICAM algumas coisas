@@ -12,13 +12,11 @@ Entendendo como o GNU Sim 8085:
 - Assim, se você usar um "código" INCREMENTE (INR) ou DECREMENTE (DCR), por mais que o simulador NÃO MOSTRE, os valores dessa conta está passando por ele, pelo
 reg A. ou seja: se faço INR E, o reg. e (você vai achar o reg. e, pois fica escrito DE no canto superior esquerdo, o reg. "E" é o segundo "00", e não o primeiro, que é o registrador D) é incrementado
 em 1.
-O simulador vai mostrar e = 1 (tanto faz escrever "e" maiúsculo ou minúsculo).
-E vai mostrar A=0. Só que na verdade, A= E, e como e = 1, A na verdade é = 1. Só que não mostra. Isso vai servir para o loop pois...:
-
 
 
 Sobre loops:
-...pois... :O loop funciona com os "jumps" que é saltar para alguma linha. Quando você escreve um JUMP, como "JNZ" você precisa de escreve para onde você quer que pule, como:
+O loop funciona com os "jumps" que é saltar para alguma linha. Quando você escreve um JUMP, como "JNZ" você precisa de escreve para onde você quer que pule, como:
 jnz InicioDoLoopM (pula para linha onde está escrito "InicioDoLoopM:")
 e em alguma linha, antes do código que você escreveu você terá que "declarar" o InicioDoLoopM: (<- escrevendo isto e colocando dois pontos que "declara")
-O JNZ é um loop que pula quando a FLAG "Z" = 0. Z, o sinalizador zero é usado para verificar o resultado de uma operação aritmética, incluindo instruções lógicas bit a bit . É definido como 1, ou verdadeiro, se um resultado aritmético for zero e redefinido caso contrário. Isso inclui resultados que não são armazenados, pois a maioria dos conjuntos de instruções tradicionais implementa a instrução de comparação como uma subtração onde o resultado é descartado. Também é comum que os processadores tenham uma instrução AND bit a bit que não armazene o resultado.
+O JNZ é um loop que pula quando a FLAG "Z" = 0. Z, o sinalizador zero é usado para verificar o resultado de uma operação aritmética, incluindo instruções lógicas bit a bit . É definido como 1, ou verdadeiro, se um resultado aritmético for zero e redefinido caso contrário. Isso inclui resultados que não são armazenados, 
+a maioria dos conjuntos de instruções tradicionais implementa a instrução de comparação como uma subtração onde o resultado é descartado. Também é comum que os processadores tenham uma instrução AND bit a bit que não armazene o resultado.
