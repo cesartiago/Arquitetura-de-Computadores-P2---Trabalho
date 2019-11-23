@@ -1,0 +1,27 @@
+
+;<Program title>
+
+jmp start
+
+;data
+
+
+;code
+start: nop
+
+
+
+MVI B,20H
+MVI C,20H
+MVI A,00H
+MVI D,00H
+
+ADD B
+JNC L1
+INR D
+L1: DCR B
+JNZ L1 ; SÓ IRA SAIR DESSE LOOP QUANDO B FOR ZERO, POIS ESSE VALOR VAI PARA O REGISTRADOR A
+STA 1
+MOV A,D
+STA 2
+hlt
