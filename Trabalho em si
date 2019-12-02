@@ -1,0 +1,35 @@
+
+;<Multiplicacão por soma - Por Tiago César C. Costa - Versão 0.2>	;---INICIAL
+
+jmp start		;---INICIAL
+
+;data			;---INICIAL
+
+
+;code			;---INICIAL
+start: nop		;---INICIAL
+
+;Registrador A, é o acumulador.
+
+
+LDA 1 ;Carrega o dado que está em decimal no endereco de MEMÓRIA 1 (decimal), para o registrador a (lá ele guarda em hexadec)
+mov b,A ;Move o valor de a para o registrador b
+mov e, A ;Pois "e" é a auxiliar, que indica quantas vezes nós iremos repetir a soma
+; AGORA O VALOR DE B está em "e"
+DCR e ;Pois nós precisamos de fazer o loop "e" vezes -1. Ou seja ele vai fazer uma soma padrão, e o loop "e" vezes - ', porque a 1ª ja foi feita.
+
+LDA 2 ;Carrega o dado que está em decimal no endereco de MEMÓRIA 2 (decimal), para o registrador a (lá ele guarda em hexadec)
+mov c,A ;Move o valor de a para o registrador c
+; AGORA EM A ESTÁ O VALOR DE C, A = C
+
+
+
+InicioDoLoopM: add C ; Reg. A = A + c ,ou seja, A = C + C, Adiciona ao reg. A (que já contém o último valor de c) o c.
+
+mov d, A ; Guarda em D o valor de A = A + B 
+sta 003 ; "Store accumulator" Guardar no endereço de memória "0004" o valor de "Acumulator", ou seja, o reg. A
+DCR e; Tira -1 de "e" - reg. auxiliar. O valor de e, no final do decrento, vai para reg. A.
+
+jnz InicioDoLoopM ; Z é o sinalizador aritmético. NZ é se Z=0, Z é zero (false) se o resultado de uma operação aritmética for diferente de zero, como 1. Z (zero) é verdadeiro se o resultado da op. arit. for = 0
+; O loop só acaba se Z =1, ou seja, A = 0. Reg A. carregará o valor da última conta, que é o resultado do decremento de e.
+hlt			;---INICIAL
